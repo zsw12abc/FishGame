@@ -22,7 +22,7 @@ fruitObj.prototype.init = function () {
 fruitObj.prototype.draw = function () {
     for (var i = 0; i < this.num; i++) {
         //draw fruit
-        ctx2.drawImage(this.orange, this.x[i], this.y[i]);
+        ctx2.drawImage(this.orange, this.x[i] - this.orange.width * 0.5, this.y[i] - this.orange.height * 0.5);
         // console.log("fruit " + i + " : " + this.x[i] + " " + this.y[i]);
     }
 }
