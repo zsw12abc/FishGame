@@ -16,6 +16,9 @@ var ane;
 var fruit;
 var mon;
 
+var mx;//mouse position
+var my;
+
 document.body.onload = game;
 
 function game() {
@@ -35,6 +38,8 @@ function init() {
     can2 = document.getElementById("canvas2");//background, ane, foods
     ctx2 = can1.getContext("2d");
 
+    can1.addEventListener('mousemove', onMousemove, false);
+
     bgPic.src = "./src/background.jpg";
     this.canWidth = can1.width;
     this.canHeight = can1.height;
@@ -47,6 +52,9 @@ function init() {
 
     mon = new monObj();
     mon.init();
+
+    mx = canWidth * 0.5;
+    my = canHeight * 0.5;
 }
 
 function gameloop() {
@@ -63,4 +71,12 @@ function gameloop() {
     // ctx1.clearRect(0, 0, canWidth, canHeight);
     mon.draw();
     // console.log(deltaTime);
+}
+
+function onMousemove(e) {
+    if(e.offsetX || e.layerX){
+        mx = e.offsetX == undefined? e.layerX : e.offsetX;
+        my = e.offsetY == undefined? e.layerY : e.offsetY;
+        // console.log(mx);
+    }
 }
