@@ -12,6 +12,8 @@ var deltaTime;//time costs between each fps
 
 var bgPic = new Image();
 
+var ane;
+
 document.body.onload = game;
 
 function game() {
@@ -24,6 +26,8 @@ function game() {
     bgPic.src = "./src/background.jpg";
     canWidth = can1.width;
     canHeight = can1.height;
+
+
 }
 
 function init() {
@@ -34,6 +38,9 @@ function init() {
     can2 = document.getElementById("canvas2");//background, ane, foods
     ctx2 = can1.getContext("2d");
 
+    ane = new aneObj();
+    ane.init();
+
 }
 
 function gameloop() {
@@ -42,6 +49,7 @@ function gameloop() {
     deltaTime = now - lastTime;
     lastTime = now;
     drawBackground();
+    ane.draw();
 
-    console.log(deltaTime);
+    // console.log(deltaTime);
 }
