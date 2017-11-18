@@ -14,6 +14,7 @@ var bgPic = new Image();
 
 var ane;
 var fruit;
+var mon;
 
 document.body.onload = game;
 
@@ -43,6 +44,9 @@ function init() {
 
     fruit = new fruitObj();
     fruit.init();
+
+    mon = new monObj();
+    mon.init();
 }
 
 function gameloop() {
@@ -55,5 +59,8 @@ function gameloop() {
     fruitMonitor();
     fruit.draw();
 
+
+    // ctx1.clearRect(0, 0, canWidth, canHeight);
+    mon.draw();
     // console.log(deltaTime);
 }

@@ -82,7 +82,7 @@ function sendFruit() {
     for (var i = 0; i < fruit.num; i++) {
         if (!fruit.alive[i]) {
             fruit.born(i);
-            console.log("fruit " + i + " has been sent");
+            // console.log("fruit " + i + " has been sent");
             return;
         }
     }
