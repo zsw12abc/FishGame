@@ -41,7 +41,8 @@ fruitObj.prototype.draw = function () {
             }
             ctx2.drawImage(pic, this.x[i] - this.l[i] * 0.5, this.y[i] - this.l[i] * 0.5, this.l[i], this.l[i]);
             if (this.y[i] < 10) {
-                this.alive[i] = false;
+                // this.alive[i] = false;
+                fruit.dead(i);
             }
         }
         // console.log("fruit " + i + " : " + this.x[i] + " " + this.y[i]);
@@ -62,6 +63,11 @@ fruitObj.prototype.born = function (i) {
         this.fruitType[i] = "orange";
     }
     // console.log(canHeight);
+}
+
+fruitObj.prototype.dead = function (i) {
+    this.alive[i] = false;
+    // console.log("fruit " + i + " is dead");
 }
 
 function fruitMonitor() {
