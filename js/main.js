@@ -95,10 +95,9 @@ function gameloop() {
     // ctx1.clearRect(0, 0, canWidth, canHeight);
     mon.draw();
     // console.log(deltaTime);
-
-    monFruitsCollision();
-
     baby.draw();
+    monFruitsCollision();
+    monBabyCollision();
 }
 
 function onMousemove(e) {

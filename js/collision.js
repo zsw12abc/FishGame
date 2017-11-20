@@ -13,3 +13,13 @@ function monFruitsCollision() {
         }
     }
 }
+
+
+//mon feed baby
+function monBabyCollision() {
+    var l = calLength2(mon.x, mon.y, baby.x, baby.y);
+    if (l < 900){
+        //baby recover
+        baby.babyBodyCount = 0;
+    }
+}
