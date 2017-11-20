@@ -8,6 +8,17 @@ function monFruitsCollision() {
             if (l < 900) {
                 // fruit is eaten
                 fruit.dead(i);
+                mon.bigBodyCount++;
+                if (mon.bigBodyCount > 7) {
+                    mon.bigBodyCount = 7;
+                }
+
+                //blue fruit will double the score
+                if (fruit.fruitType[i] === "blue") {
+                    data.double = 2;
+                } else {
+                    data.fruitNum++;
+                }
                 // console.log("fruit " + i + " has been eaten");
             }
         }
@@ -18,8 +29,10 @@ function monFruitsCollision() {
 //mon feed baby
 function monBabyCollision() {
     var l = calLength2(mon.x, mon.y, baby.x, baby.y);
-    if (l < 900){
+    if (l < 900) {
         //baby recover
         baby.babyBodyCount = 0;
+        data.reset();
+        mon.bigBodyCount = 0;
     }
 }

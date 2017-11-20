@@ -2,9 +2,9 @@ var monObj = function () {
     this.x;
     this.y;
     this.angle;
-    this.bigEye = new Image();
-    this.bigBody = new Image();
-    this.bigTail = new Image();
+    // this.bigEye = new Image();
+    // this.bigBody = new Image();
+    // this.bigTail = new Image();
 
     this.bigTailTimer = 0;
     this.bigTailCount = 0;
@@ -12,15 +12,18 @@ var monObj = function () {
     this.bigEyeCount = 0;
     this.bigEyeTimer = 0;
     this.bigEyeInterval = 1000;
+
+    this.bigBodyCount = 0;
+
 }
 
 monObj.prototype.init = function () {
     this.x = canWidth * 0.5;
     this.y = canHeight * 0.5;
     this.angle = 0;
-    this.bigEye.src = "./src/bigEye0.png";
-    this.bigBody.src = "./src/bigSwim0.png";
-    // this.bigTail.src = "./src/bigTail0.png";
+    // this.bigEye.src = "./src/bigEye0.png";
+    // this.bigBody.src = "./src/bigSwim0.png";
+    // this.monTail.src = "./src/bigTail0.png";
 
 }
 
@@ -44,7 +47,7 @@ monObj.prototype.draw = function () {
     }
 
     this.bigEyeTimer += deltaTime;
-    if (this.bigEyeTimer > this.bigEyeInterval){
+    if (this.bigEyeTimer > this.bigEyeInterval) {
         this.bigEyeCount = (this.bigEyeCount + 1) % 2;
         this.bigEyeTimer %= this.bigEyeInterval;
 
@@ -60,8 +63,13 @@ monObj.prototype.draw = function () {
     ctx1.save();
     ctx1.translate(this.x, this.y);
     ctx1.rotate(this.angle);
-    ctx1.drawImage(bigTail[this.bigTailCount], -bigTail[this.bigTailCount].width * 0.5 + 30, -bigTail[this.bigTailCount].height * 0.5);
-    ctx1.drawImage(this.bigBody, -this.bigBody.width * 0.5, -this.bigBody.height * 0.5);
-    ctx1.drawImage(bigEye[this.bigEyeCount], -bigEye[this.bigEyeCount].width * 0.5, -bigEye[this.bigEyeCount].height * 0.5);
+    ctx1.drawImage(monTail[this.bigTailCount], -monTail[this.bigTailCount].width * 0.5 + 30, -monTail[this.bigTailCount].height * 0.5);
+    if (data.double === 1) {
+        ctx1.drawImage(monBodyOra[this.bigBodyCount], -monBodyOra[this.bigBodyCount].width * 0.5, -monBodyOra[this.bigBodyCount].height * 0.5);
+    } else {
+        ctx1.drawImage(monBodyBlue[this.bigBodyCount], -monBodyBlue[this.bigBodyCount].width * 0.5, -monBodyBlue[this.bigBodyCount].height * 0.5);
+    }
+
+    ctx1.drawImage(monEye[this.bigEyeCount], -monEye[this.bigEyeCount].width * 0.5, -monEye[this.bigEyeCount].height * 0.5);
     ctx1.restore();
 }

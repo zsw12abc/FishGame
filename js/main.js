@@ -23,9 +23,12 @@ var babyTail = [];
 var babyEye = [];
 var babyBody = [];
 
-var bigTail = [];
-var bigEye = [];
-var bigBody = [];
+var monTail = [];
+var monEye = [];
+var monBodyOra = [];
+var monBodyBlue = [];
+
+var data;
 
 document.body.onload = game;
 
@@ -70,12 +73,19 @@ function init() {
     for (var i = 0; i < 8; i++) {
         babyTail[i] = new Image();
         babyTail[i].src = "./src/babyTail" + i + ".png";
-        // console.log(babyTail[i].src);
+        monTail[i] = new Image();
+        monTail[i].src = "./src/bigTail" + i + ".png";
+        monBodyOra[i] = new Image();
+        monBodyBlue[i] = new Image();
+        monBodyOra[i].src = "./src/bigSwim" + i + ".png";
+        monBodyBlue[i].src = "./src/bigSwimBlue" + i + ".png";
     }
 
     for (var i = 0; i < 2; i++) {
         babyEye[i] = new Image();
         babyEye[i].src = "./src/babyEye" + i + ".png";
+        monEye[i] = new Image();
+        monEye[i].src = "./src/bigEye" + i + ".png";
     }
 
     for (var i = 0; i < 20; i++) {
@@ -83,16 +93,7 @@ function init() {
         babyBody[i].src = "./src/babyFade" + i + ".png";
     }
 
-    for (var i = 0; i < 8; i++) {
-        bigTail[i] = new Image();
-        bigTail[i].src = "./src/bigTail" + i + ".png";
-    }
-
-    for (var i = 0; i < 2; i++) {
-        bigEye[i] = new Image();
-        bigEye[i].src = "./src/bigEye" + i + ".png";
-        console.log(bigEye[i].src);
-    }
+    data = new dataObj();
 }
 
 function gameloop() {
@@ -113,6 +114,8 @@ function gameloop() {
     baby.draw();
     monFruitsCollision();
     monBabyCollision();
+
+    data.draw();
 }
 
 function onMousemove(e) {

@@ -29,9 +29,9 @@ fruitObj.prototype.draw = function () {
     for (var i = 0; i < this.num; i++) {
         //draw fruit
         if (this.alive[i]) {
-            if(this.fruitType[i] == "blue"){
+            if (this.fruitType[i] == "blue") {
                 var pic = this.blue;
-            }else{
+            } else {
                 var pic = this.orange;
             }
             if (this.l[i] <= 14) {
@@ -57,9 +57,9 @@ fruitObj.prototype.born = function (i) {
     this.l[i] = 0;
     this.alive[i] = true;
     var ran = Math.random();
-    if (ran < 0.2){
+    if (ran < 0.2) {
         this.fruitType[i] = "blue";
-    }else{
+    } else {
         this.fruitType[i] = "orange";
     }
     // console.log(canHeight);
