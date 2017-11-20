@@ -50,7 +50,7 @@ babyObj.prototype.draw = function () {
         this.babyEyeCount = (this.babyEyeCount + 1) % 2;
         this.babyEyeTimer %= this.babyEyeInterval;
 
-        if (this.babyEyeCount == 0) {
+        if (this.babyEyeCount === 0) {
             this.babyEyeInterval = Math.random() * 1500 + 1000;
         } else {
             this.babyEyeInterval = 300;
