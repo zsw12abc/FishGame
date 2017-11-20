@@ -53,6 +53,9 @@ function init() {
     mon = new monObj();
     mon.init();
 
+    baby = new babyObj();
+    baby.init();
+
     mx = canWidth * 0.5;
     my = canHeight * 0.5;
 }
@@ -74,6 +77,8 @@ function gameloop() {
     // console.log(deltaTime);
 
     monFruitsCollision();
+
+    baby.draw();
 }
 
 function onMousemove(e) {
