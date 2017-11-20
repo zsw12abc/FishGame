@@ -62,6 +62,7 @@ function gameloop() {
     var now = Date.now();
     deltaTime = now - lastTime;
     lastTime = now;
+    if (deltaTime > 50) deltaTime = 50;
     drawBackground();
     ane.draw();
     fruitMonitor();
@@ -76,9 +77,9 @@ function gameloop() {
 }
 
 function onMousemove(e) {
-    if(e.offsetX || e.layerX){
-        mx = e.offsetX == undefined? e.layerX : e.offsetX;
-        my = e.offsetY == undefined? e.layerY : e.offsetY;
+    if (e.offsetX || e.layerX) {
+        mx = e.offsetX == undefined ? e.layerX : e.offsetX;
+        my = e.offsetY == undefined ? e.layerY : e.offsetY;
         // console.log(mx);
     }
 }
