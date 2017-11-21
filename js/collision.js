@@ -17,8 +17,10 @@ function monFruitsCollision() {
                     //blue fruit will double the score
                     if (fruit.fruitType[i] === "blue") {
                         data.double = 2;
+                        wave.born(fruit.x[i], fruit.y[i], "blue");
                     } else {
                         data.fruitNum++;
+                        wave.born(fruit.x[i], fruit.y[i], "white");
                     }
                     // console.log("fruit " + i + " has been eaten");
                 }
@@ -38,6 +40,7 @@ function monBabyCollision() {
             mon.bigBodyCount = 0;
             //score update
             data.addScore();
+            wave.born(baby.x, baby.y, "red");
             data.reset();
         }
     }

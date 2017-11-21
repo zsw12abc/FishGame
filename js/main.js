@@ -29,6 +29,8 @@ var monBodyOra = [];
 var monBodyBlue = [];
 
 var data;
+var wave;
+var halo;
 
 document.body.onload = game;
 
@@ -94,6 +96,8 @@ function init() {
     }
 
     data = new dataObj();
+    wave = new waveObj();
+    wave.init();
 }
 
 function gameloop() {
@@ -116,6 +120,7 @@ function gameloop() {
     monBabyCollision();
 
     data.draw();
+    wave.draw();
 }
 
 function onMousemove(e) {
