@@ -30,7 +30,8 @@ var monBodyBlue = [];
 
 var data;
 var wave;
-var halo;
+var dust;
+var dustPic = [];
 
 document.body.onload = game;
 
@@ -98,6 +99,13 @@ function init() {
     data = new dataObj();
     wave = new waveObj();
     wave.init();
+
+    dust = new dustObj();
+    for (var i = 0; i < 7; i++) {
+        dustPic[i] = new Image();
+        dustPic[i].src = "./src/dust" + i + ".png";
+    }
+    dust.init();
 }
 
 function gameloop() {
@@ -121,6 +129,7 @@ function gameloop() {
 
     data.draw();
     wave.draw();
+    dust.draw();
 }
 
 function onMousemove(e) {

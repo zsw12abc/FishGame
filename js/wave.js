@@ -4,14 +4,16 @@ var waveObj = function () {
     this.alive = [];
     this.r = [];
     this.color = [];
-}
+};
+
 waveObj.prototype.num = 10;
 waveObj.prototype.init = function () {
     for (var i = 0; i < this.num; i++) {
         this.alive[i] = false;
         this.r[i] = 0;
     }
-}
+};
+
 waveObj.prototype.draw = function () {
     ctx1.save();
     ctx1.lineWidth = 2;
@@ -40,7 +42,7 @@ waveObj.prototype.draw = function () {
         }
     }
     ctx1.restore();
-}
+};
 
 waveObj.prototype.born = function (x, y, color) {
     for (var i = 0; i < this.num; i++) {
@@ -56,4 +58,4 @@ waveObj.prototype.born = function (x, y, color) {
             return;
         }
     }
-}
+};

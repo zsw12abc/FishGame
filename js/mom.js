@@ -15,7 +15,7 @@ var monObj = function () {
 
     this.bigBodyCount = 0;
 
-}
+};
 
 monObj.prototype.init = function () {
     this.x = canWidth * 0.5;
@@ -25,7 +25,7 @@ monObj.prototype.init = function () {
     // this.bigBody.src = "./src/bigSwim0.png";
     // this.monTail.src = "./src/bigTail0.png";
 
-}
+};
 
 monObj.prototype.draw = function () {
     //move towards mouse
@@ -72,4 +72,4 @@ monObj.prototype.draw = function () {
 
     ctx1.drawImage(monEye[this.bigEyeCount], -monEye[this.bigEyeCount].width * 0.5, -monEye[this.bigEyeCount].height * 0.5);
     ctx1.restore();
-}
+};

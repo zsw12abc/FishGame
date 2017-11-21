@@ -15,7 +15,7 @@ var babyObj = function () {
 
     this.babyBodyTimer = 0;
     this.babyBodyCount = 0;
-}
+};
 
 babyObj.prototype.init = function () {
     this.x = canWidth * 0.5 - 50;
@@ -24,7 +24,7 @@ babyObj.prototype.init = function () {
     // this.babyEye.src = "./src/babyEye0.png"
     // this.babyBody.src = "./src/babyFade0.png"
     // this.babyTail.src = "./src/babyTail0.png"
-}
+};
 
 babyObj.prototype.draw = function () {
     this.x = lerpDistance(mon.x, this.x, 0.995);
@@ -80,4 +80,4 @@ babyObj.prototype.draw = function () {
     var babyEyeCount = this.babyEyeCount;
     ctx1.drawImage(babyEye[babyEyeCount], -babyEye[babyEyeCount].width * 0.5, -babyEye[babyEyeCount].height * 0.5);
     ctx1.restore();
-}
+};

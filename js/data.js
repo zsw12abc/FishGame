@@ -4,11 +4,11 @@ var dataObj = function () {
     this.score = 0;
     this.gameOver = false;
     this.alpha = 0;
-}
+};
 dataObj.prototype.reset = function () {
     this.fruitNum = 0;
     this.double = 1;
-}
+};
 dataObj.prototype.draw = function () {
     var w = can1.width;
     var h = can1.height;
@@ -31,8 +31,8 @@ dataObj.prototype.draw = function () {
         ctx1.fillText("Game Over", w * 0.5, h * 0.5);
     }
     ctx1.restore();
-}
+};
 dataObj.prototype.addScore = function () {
     this.score += this.fruitNum * 100 * this.double;
     // this.reset();
-}
+};
